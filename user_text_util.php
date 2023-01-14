@@ -10,8 +10,6 @@ if (($file =fopen(filename:'ab.csv',mode:'r'))!==false){
         $my_arr = [];
         for ($i = 0; $i < count($data);$i++){
             $out .= $data[$i] . " "; 
-            // $my_arr[$i] = $data[$i];
-        //    $list += preg_split("/[\s;]+/",$data[$i]);
         }
         echo $out;
         // echo $my_arr;
