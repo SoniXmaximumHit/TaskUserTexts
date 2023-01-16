@@ -11,7 +11,7 @@ function reat_csv(){
     // CSV файл в массив:
     global $arr;$arr=[];
     //$f_csv= 'people.csv'
-    $lines = file('ab.csv');    
+    $lines = file('people.csv');    
     foreach($lines as $line)
     {   
         $arr_i=[];
