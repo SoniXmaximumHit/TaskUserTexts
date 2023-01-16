@@ -62,5 +62,31 @@ function read_texts()
 }
 
 
-read_texts();
-print_r($arr);
+function countAverageLineCount()
+{
+    /* Функция находит и выводит среднее количество 
+    строк на одного пользователя */
+    global $arr;
+    read_texts();
+    for ($i = 1; $i <= count($arr); $i++) {
+
+        foreach ($arr[$i - 1] as $key => $value) {
+            $c_str = 0;
+            $mykey = $key;
+            if ($mykey == 'texts') {
+                // var_dump($value);
+                foreach ($value as $v) {
+                    // echo '<br>Количество строк' . count(explode("\n", $v)) . '<br>в ' . $v;
+                    $c_str += count(explode("\n", $v));
+                    
+                }
+                // echo count($value);
+                $arr[$i - 1] += ['count_line' => round($c_str/count($value))];
+            }
+
+        }
+    }
+}
+
+countAverageLineCount();
+var_dump($arr);
