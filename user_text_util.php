@@ -103,7 +103,7 @@ function replaceDates()
                 foreach ($value as $v) {
                     // echo '<br>Количество строк' . count(explode("\n", $v)) . '<br>в ' . $v;
                     $c_str += substr_count( $v,'/');
-                    echo $v;
+//                     echo $v;
                 }
                 // echo count($value);
                 $arr[$i - 1] += ['count_replace' => $c_str];
