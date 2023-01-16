@@ -87,6 +87,18 @@ function countAverageLineCount()
         }
     }
 }
+function output_texts(){
+/*     Открывает папку output_texts/ и добавляет 
+    туда изменённые файлы из папки texts/ */
+    global $aa; 
+    $dir = './output/';
+    foreach ($aa as $key => $value) {
+        $file = $dir.$key;
+        $fp = fopen($file, 'w+');      
+        $value = str_replace("/", "-", $value);
+        fwrite($fp, $value);
+    }     
+}
 function replaceDates()
 {
     /* Функция находит и выводит среднее количество 
