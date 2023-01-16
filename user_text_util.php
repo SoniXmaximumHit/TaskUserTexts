@@ -88,5 +88,51 @@ function countAverageLineCount()
     }
 }
 
+function print_symbol($x,$symbol,$y){
+    /* Форма строки (имя,символ,число) */
+    echo $x.$symbol.$y;
+    echo '<hr>';
+}
+function print_full($s)
+{
+    /* Вывод строки со знаком (,) или (;)  */
+    global $arr;
+    for ($i = 1; $i <= count($arr); $i++) {
+        $a = 0;$b = 0;$c = 0;
+        foreach ($arr[$i - 1] as $key => $value) {
+            $mykey = $key;
+            if ($mykey == 'name') {
+                $a = $value;
+                // echo $a;
+            }
+            if ($mykey == 'count_replace') {
+                $b = $value;
+                // echo $b;
+                var_dump($b);
+            }
+            if ($mykey == 'count_line') {
+                $c = $value;
+                // echo $c;
+            }
+            
+        }   
+        if ($b !== 0) {
+            print_symbol($a, $s, $b);
+        }
+        if ($c !== 0) {
+            print_symbol($a, $s, $c);
+        }
+    }
+}
+function comma(){
+    /* Вывод строки со знаком (,)  */
+    print_full(',');
+}
+function semicolon(){
+    /* Вывод строки со знаком (;)  */
+    print_full(';');
+}
+
 countAverageLineCount();
+comma();
 var_dump($arr);
