@@ -55,10 +55,6 @@ function read_texts()
         $arr[$i-1]+=['texts'=>$b];
     }
 }
-
-
-
-// print_r($arr);
 function countAverageLineCount()
 {
     /* Функция находит и выводит среднее количество 
